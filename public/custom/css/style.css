@@ -1,0 +1,31 @@
+.product_image img {transform-origin: 0 0; transition: transform .25s, visibility .25s ease-in;}
+.product_image img:hover{ transform: scale(4); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
+.product_qr svg { transform-origin: 0 0; transition: transform .25s, visibility .25s ease-in;}
+.product_qr svg:hover{ transform: scale(4); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
+
+
+
+/***edit_page****/
+
+.edit-image{float: left; margin-left: auto;    margin-right: auto;}
+.item-center{  margin-left: 50%; transform: translateX(-50%);}
+.edit-qr { float: left;}
+.position-absolute {position: relative;}
+.edit-image-qr { position: absolute; top: 0;}
+.edit-image-qr svg { transform-origin: -0 -0; transition: transform .25s, visibility .25s ease-in;}
+.edit-image-qr svg:hover{ transform: scale(1.5); box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+.inputfile {	width: 0.1px;	height: 0.1px;	opacity: 0;	overflow: hidden;	position: absolute;	z-index: -1;}
+.inputfile + label {    font-size: 1.25em;    font-weight: 700;    color: white;    background-color: black;    display:none;}
+
+.inputfile:focus + label,
+/* .inputfile + label:hover {    background-color: red;} */
+.inputfile + label {	cursor: pointer; /* "hand" cursor */}
+.inputfile:focus + label {	outline: 1px dotted #000;	outline: -webkit-focus-ring-color auto 5px;}
+.select-image{ position: absolute;    top: 50%;    left: 50%; transform: translate(-50%);}
+.edit-image:hover img { opacity: 0.5;    filter: alpha(opacity=50); cursor:pointer;}
+.edit-image:hover  .inputfile + label {display: block;}
+.button-group { widows: 50%;}
+#image_preview {padding: 5px;    background-color: #dad9d9; margin-top:10px;}
+.append_img { margin-right:5px;}
