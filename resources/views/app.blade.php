@@ -80,9 +80,11 @@
     <!-- Right Panel -->
 
 
-    <script src="{{url('/')}}/vendors/jquery/dist/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!-- <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"></script> -->
     <script src="{{url('/')}}/vendors/popper.js/dist/umd/popper.min.js"></script>
-    <script src="{{url('/')}}/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="{{url('/')}}/assets/js/main.js"></script>
 
 
@@ -100,7 +102,6 @@
 
 
 <!-- edit table cell-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 
 
@@ -109,28 +110,46 @@
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+<!-- /modal -->
+
+<div class="modal fade" id="suremodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Alert</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Are you really gonna delete this item? 
+        Are you sure to delete this item? 
       </div>
       <div class="modal-footer">
-        <a  class="btn btn-secondary" data-dismiss="modal">No</a>
-        <a  href="{{ url('/delete_item/')}}" class="btn btn-primary">Yes</a>
+        <button  class="btn btn-secondary" data-dismiss="modal">No</button>
+        
+        <form action = "{{url('/delete-item')}}" method="post">
+           
+            @csrf
+            <input type="hidden" name="proid" id="pro_id" value="">
+            <button type="submit" class="btn btn-primary">Yes</button>
+        </form>
+        
         
       </div>
     </div>
   </div>
 </div>
-
-
 </body>
+<script>
+ 
+        function deleteitem(id){
+            jQuery( document ).ready(function( $ ) {
+                $("#pro_id").val(id);
+                $("#suremodal").modal();
+            });
 
+        }
+</script>
 </html>

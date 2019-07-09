@@ -123,7 +123,7 @@
                                                                     <div class="col-12 col-md-9">
                                                                         <select name="category" id="SelectLm" class="form-control-sm form-control">
                                                                             @foreach ($category as $item)
-                                                                            <option value="{{$item->category}}">{{$item->category}}</option>
+                                                                                <option value="{{$item->category}}">{{$item->category}}</option>
                                                                             @endforeach
                                                                         </select>
                                                                     </div>
@@ -133,7 +133,9 @@
                                                                 <div class="col-12 col-md-9">
                                                                     <input type="file" id="file-multiple-input" name="others[]" multiple="" class="form-control-file">
                                                                     <div id ="image_preview">
-
+                                                                        <img class='append_img' src='{{url('/')}}/{{$route->image1}}' width='100px' height='100px'>
+                                                                        <img class='append_img' src='{{url('/')}}/{{$route->image2}}' width='100px' height='100px'>
+                                                                        <img class='append_img' src='{{url('/')}}/{{$route->image3}}' width='100px' height='100px'>
                                                                     </div>
                                                                     <input type="hidden" value="{{$route->image1}}" name="otherImageHidden1">
                                                                     <input type="hidden" value="{{$route->image2}}" name="otherImageHidden2">
@@ -238,6 +240,7 @@
             </div>
         </div>
     </div>
+    
 @endsection
 
                                          

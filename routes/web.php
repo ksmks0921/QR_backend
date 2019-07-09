@@ -20,7 +20,7 @@
 
       Auth::routes();
       Route::get('/', 'ProductController@showall');
-      Route::get('/delete-item/{id}', 'ProductController@delete');
+      Route::post('/delete-item', 'ProductController@deleteproduct');
       Route::get('/edit-item/{id}', 'ProductController@edit');
       Route::post('/save/{id}', 'ProductController@save');
       Route::get('/new', 'ProductController@new');

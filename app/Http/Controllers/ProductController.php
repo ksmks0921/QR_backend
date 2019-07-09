@@ -17,6 +17,9 @@ class ProductController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function index(){
+        $products = Product::all();   
+     }
     public function __construct()
     {
         $this->middleware('auth');
@@ -40,10 +43,10 @@ class ProductController extends BaseController
         return view('home')->with($data);
     }
 
-    public function delete($id)
+    public function deleteproduct(Request $request)
     {
         
-
+        $id = $request->proid;
         DB::table('products')->where('_id', '=', $id)->delete();
         return redirect('/');
         
@@ -150,47 +153,8 @@ class ProductController extends BaseController
            $image_other[3] = $request->otherImageHidden3;
         }
        
-        
-
-        if($request->hasFile('sds'))
-        {
-            $allowedfileExtension=['pdf','jpg','png','docx'];
-            $file = $request->file('sds');
-            $filename = $file->getClientOriginalName();
-            $destinationPath = 'uploads/sds/'.$request->category;
-           
-            $sds = $destinationPath.'/'.$filename;
-            $file->move($destinationPath,$filename);
-            // Product::where('_id' ,$request->id)->update(['sds' =>  $sds]);   
-              
-            
-
-        }
-        else {
-           $sds = $request->sdsHidden;
-        }
-
-
-
-
-
-        if($request->hasFile('tds'))
-        {
-            $allowedfileExtension=['pdf','jpg','png','docx'];
-            $file = $request->file('tds');
-            $filename = $file->getClientOriginalName();
-            $destinationPath = 'uploads/tds/'.$request->category;
-            
-                $tds = $destinationPath.'/'.$filename;
-                $file->move($destinationPath, $filename);
-                // Product::where('_id' ,$request->id)->update(['tds' => $tds]);   
-                           
-            
-        }
-        else {
-           $tds = $request->tdsHidden;
-        }
-
+        $tds = $request->tds;
+        $sds = $request->sds;
         $category = Category::where('category',$request->category)->get()->toArray();
 
       

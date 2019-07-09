@@ -76,7 +76,8 @@
                                                 </style>
                                                 <ul class="d-flex justify-content-center" id="action">
                                                     <li class="mr-3"><a href="{{ url('/edit-item/'.$route->_id)}}" class="text-secondary edit" ><i class="fa fa-edit"></i></a></li>
-                                                    <li><a class="text-danger" data-toggle="modal" data-target="#exampleModal"><i class="ti-trash"></i></a></li>
+                                                    <li><a onclick="deleteitem({{$route->_id}})" class="text-danger" ><i class="ti-trash"></i></a></li>
+                                                    
                                                 </ul>
        
                                             </th>
@@ -97,6 +98,9 @@
 
 
     </div><!-- /#right-panel -->
+
+
+
 @endsection
     <!-- Right Panel -->
 
