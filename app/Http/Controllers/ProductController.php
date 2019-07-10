@@ -274,7 +274,7 @@ class ProductController extends BaseController
 
 
             $sds = $request->sds;
-            $tds = $reqeust->tds;
+            $tds = $request->tds;
 
 
         // if($request->hasFile('tds'))
@@ -299,7 +299,7 @@ class ProductController extends BaseController
         $category = Category::where('category',$request->category)->get()->toArray();
         $qr = url('/').'api/getProduct/'.$request->id;
 
-        $data=array('image'=>$image, 'image1'=>$image_other[1], 'image2'=>$image_other[2], 'image3'=>$image_other[3] ,'qr'=>$qr, 'name'=>$request->name, 'description'=>$request->description, 'category'=>$category[0]['_id'],'sds'=>$sds, 'tds'=>$tds, 'idea'=>$request->idea);
+        $data=array('image'=>$image, 'image1'=>$image_other[1], 'image2'=>$image_other[2], 'image3'=>$image_other[3] ,'qr'=>$qr, 'name'=>$request->name, 'description'=>$request->description, 'category'=>$category[0]['_id'],'sds'=>$request->sds, 'tds'=>$request->tds, 'idea'=>$request->idea, 'similar'=>$request->similar);
       
       
             DB::table('products')->insert($data);
