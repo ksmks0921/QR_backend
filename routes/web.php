@@ -24,6 +24,7 @@
       Route::get('/edit-item/{id}', 'ProductController@edit');
       Route::post('/save/{id}', 'ProductController@save');
       Route::get('/new', 'ProductController@new');
+      Route::get('/booking', 'ProductController@booking');
       Route::post('/newsave', 'ProductController@newsave');
       Route::get('/get-users', 'ProductController@getUsers');
 

@@ -177,7 +177,13 @@ class ProductController extends BaseController
         return(view('new' ,$data));
 
     }
+    public function booking(){
 
+        // $category = Category::all();
+        // $data = ['category'=>$category];
+        return(view('book'));
+
+    }
 
     public function newsave(Request $request){
 

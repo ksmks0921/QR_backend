@@ -16,8 +16,5 @@ use Illuminate\Http\Request;
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
-
-
-Route::post('test', 'Api\ProfilesController@testshow');
 Route::get('getProduct/{id}', 'Api\SenddataController@sendData');
-Route::get('getProduct/{pdf}/{id}', 'Api\SenddataController@sendpdf');
+

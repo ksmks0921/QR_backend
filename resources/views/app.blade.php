@@ -56,6 +56,9 @@
                     <li>
                         <a href="{{url('/new')}}"> <i class="menu-icon fa fa-plus"></i>Add New </a>
                     </li>
+                    <li>
+                        <a href="{{url('/booking')}}"> <i class="menu-icon fa fa-book"></i>Booking</a>
+                    </li>
                     
                     
                    
